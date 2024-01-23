@@ -3,7 +3,11 @@ const transporter = require("./configEmails");
 
 
 const app = express();
+const port = process.env.PORT || 4055
 
+app.get("/", (req, res) => {
+    res.send("<h1>Servicio Send Email. 📫</h1>")
+})
 
 app.post("/send/:email/:cod", async function (req, res) {
 
@@ -50,7 +54,7 @@ app.post("/send/:email/:cod", async function (req, res) {
 
 })
 
-app.listen(4055, () => {
+app.listen(port, () => {
     console.log("Listening...")
 })
 
