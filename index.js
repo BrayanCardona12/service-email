@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 4055
 
 app.get("/", (req, res) => {
-    res.send("<h1>Servicio Send Email. 📫</h1>")
+    res.send("* { background-color: #0c370d; font-size: 120px; }").status(200)
 })
 
 app.post("/send/:email/:cod", async function (req, res) {
